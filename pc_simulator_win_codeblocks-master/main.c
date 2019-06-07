@@ -11,12 +11,12 @@
 #include <unistd.h>
 
 #include "lv_conf.h"
-#include "gui.h"
 #include "lvgl/lvgl.h"
 #include "lv_drivers/win_drv.h"
 #include "lv_examples/lv_apps/demo/demo.h"
 #include "lv_examples/lv_apps/benchmark/benchmark.h"
 #include "lv_examples/lv_tests/lv_test_theme/lv_test_theme_1.h"
+#include "gui.h"
 #if WIN32
 #include <windows.h>
 #else
@@ -57,14 +57,11 @@ int main(int argc, char** argv)
     /*Initialize LittlevGL*/
     lv_init();
 
-    /*Create GUI*/
-    create_gui();
-
     /*Initialize the HAL for LittlevGL*/
     hal_init();
 
-    /*Load a demo*/
-    demo_create();
+    /*Create GUI*/
+    create_gui();
 
     /*Try the benchmark to see how fast is your GUI*/
     //benchmark_create();
